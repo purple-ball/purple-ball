@@ -220,3 +220,56 @@
     padding: 0.8rem 1.5rem;
   }
 }
+
+/* 修改导航栏样式 */
+:global(.navbar) {
+  background: transparent !important;
+  box-shadow: none !important;
+  height: 80px;
+}
+
+:global(.navbar__inner) {
+  padding: 0 2rem;
+}
+
+:global(.navbar__brand) {
+  color: white !important;
+}
+
+:global(.navbar__title) {
+  color: white !important;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+:global(.navbar__link) {
+  color: white !important;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+:global(.navbar__link:hover) {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 移动端样式调整 */
+@media screen and (max-width: 996px) {
+  :global(.navbar__inner) {
+    padding: 0 1rem;
+  }
+  
+  :global(.navbar__title) {
+    font-size: 1.2rem;
+  }
+  
+  :global(.navbar__link) {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+  }
+}

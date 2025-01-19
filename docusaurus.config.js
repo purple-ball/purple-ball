@@ -76,22 +76,21 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        style: 'dark',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
+        title: 'My Site',
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
+            to: 'docs/intro',
+            label: '文档',
+            position: 'right',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            to: '/blog',
+            label: '博客',
             position: 'right',
           },
         ],
