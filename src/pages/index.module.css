@@ -223,7 +223,7 @@
 
 /* 覆盖 Docusaurus 默认的导航栏样式 */
 :global(.navbar) {
-  background-color: rgba(51, 51, 51, 0.95) !important;  /* 深灰色带透明度 */
+  background-color: rgba(128, 128, 128, 0.85) !important;  /* 更浅的灰色 */
   border-bottom: none !important;
   backdrop-filter: blur(5px);
 }
@@ -243,4 +243,29 @@
 :global(.navbar__link:hover), 
 :global(.navbar__brand:hover) {
   color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 修改底部样式 */
+:global(.footer) {
+  background-color: rgba(128, 128, 128, 0.85) !important;
+  backdrop-filter: blur(5px);
+}
+
+:global(.footer__link-item) {
+  color: white !important;
+}
+
+:global(.footer__copyright) {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 调整导航栏布局 */
+:global(.navbar__items--right) {
+  position: absolute !important;
+  left: 200px !important;  /* 调整这个值以改变GitHub按钮的位置 */
+}
+
+/* 隐藏不需要的导航项 */
+:global(.navbar__items--right .navbar__item:not(.navbar__item--github)) {
+  display: none !important;
 }
