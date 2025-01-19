@@ -269,3 +269,8 @@
 :global(.navbar__items--right .navbar__item:not(.navbar__item--github)) {
   display: none !important;
 }
+
+/* 隐藏颜色模式切换按钮 */
+:global(.navbar__items--right .colorModeToggle) {
+  display: none !important;
+}
