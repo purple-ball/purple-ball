@@ -9,6 +9,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
+      noNavbar={false}
+      wrapperClassName={styles.layoutWrapper}
       description="个人艺术网站">
       <main className={styles.mainContainer}>
         <div className={styles.contentWrapper}>

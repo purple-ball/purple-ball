@@ -76,31 +76,61 @@
   box-shadow: 0 4px 8px rgba(221, 160, 221, 0.3);
 }
 
-/* 主容器样式 */
-.mainContainer {
-  width: 100%;
-  min-height: 100vh;
+/* 添加整体布局样式 */
+:global(.navbar) {
+  background: transparent !important;
+  box-shadow: none !important;
+  height: 80px;
+}
+
+:global(.navbar__brand), :global(.navbar__link), :global(.navbar__toggle) {
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+:global(.navbar__toggle) {
+  color: white !important;
+}
+
+.layoutWrapper {
   background-image: url('/img/monet-umbrella-lady.jpg');
   background-size: cover;
   background-position: center 20%;
-  background-repeat: no-repeat;
-  position: relative;
-  padding-top: var(--ifm-navbar-height); /* 为导航栏预留空间 */
+  background-attachment: fixed; /* 使背景图固定，产生视差效果 */
 }
 
-/* 添加半透明遮罩 */
-.mainContainer::before {
+/* 修改主容器样式 */
+.mainContainer {
+  width: 100%;
+  min-height: calc(100vh - 80px); /* 减去导航栏高度 */
+  position: relative;
+  margin-top: 0;
+  background: transparent; /* 移除原来的背景图 */
+}
+
+/* 修改遮罩层范围 */
+:global(#__docusaurus) {
+  position: relative;
+}
+
+:global(#__docusaurus)::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
+  pointer-events: none;
 }
 
-/* 内容包装器 */
+/* 确保内容在遮罩层之上 */
+:global(.navbar) {
+  position: relative;
+  z-index: 2;
+}
+
 .contentWrapper {
   position: relative;
   z-index: 2;
@@ -183,8 +213,16 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* 响应式设计 */
+/* 移动端适配 */
 @media screen and (max-width: 996px) {
+  :global(.navbar) {
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .mainContainer {
+    min-height: calc(100vh - 60px); /* 移动端导航栏更小 */
+  }
+
   .contentWrapper {
     flex-direction: column;
     padding: 1rem;
@@ -220,33 +258,4 @@
     font-size: 1.2rem;
     padding: 0.8rem 1.5rem;
   }
-}
-
-/* 添加导航栏样式覆盖 */
-:global(.navbar) {
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: blur(5px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-:global(.navbar__brand), 
-:global(.navbar__link), 
-:global(.navbar__toggle), 
-:global(.navbar-sidebar__brand) {
-  color: white !important;
-}
-
-:global(.navbar__link:hover), 
-:global(.navbar__toggle:hover) {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-:global(.navbar-sidebar) {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-:global(.navbar__toggle), 
-:global(.navbar-sidebar__close) {
-  color: white;
 }
