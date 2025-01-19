@@ -274,3 +274,82 @@
 :global(.navbar__items--right .colorModeToggle) {
   display: none !important;
 }
+
+/* 添加全局背景样式 */
+:global(body) {
+  background: linear-gradient(
+    135deg,
+    #F0EAF4 0%,    /* 淡紫色 */
+    #E6F0F3 25%,   /* 淡蓝色 */
+    #F4F1EA 50%,   /* 米色 */
+    #EAE6F0 75%,   /* 淡紫色 */
+    #E8F4F2 100%   /* 淡青色 */
+  ) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh;
+}
+
+/* 调整内容区域背景 */
+:global(.main-wrapper),
+:global(article),
+:global(.markdown) {
+  background: transparent !important;
+}
+
+/* 调整文档页面的背景 */
+:global(.docs-wrapper) {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/* 调整博客页面的背景 */
+:global(.blog-wrapper) {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/* 调整侧边栏背景 */
+:global(.theme-doc-sidebar-container) {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  margin: 0.5rem;
+}
+
+/* 调整文章卡片背景 */
+:global(.card) {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(5px);
+  border: none !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+:global(.card:hover) {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 调整代码块背景 */
+:global(pre) {
+  background: rgba(40, 42, 54, 0.8) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* 调整表格背景 */
+:global(table) {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* 调整搜索框背景 */
+:global(.navbar__search-input) {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(5px);
+}
