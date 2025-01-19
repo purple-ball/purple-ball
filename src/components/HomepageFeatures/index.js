@@ -1,49 +1,44 @@
 import clsx from 'clsx';
-import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: '艺术灵感',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        汲取印象派大师莫奈、梵高等人的创作灵感，将艺术与科技完美融合。
       </>
     ),
+    background: 'feature-bg-1'
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: '技术创新',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        采用现代化的前端技术，打造流畅的用户体验与独特的视觉效果。
       </>
     ),
+    background: 'feature-bg-2'
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: '个性表达',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        展现独特的个人风格，让每一个页面都成为艺术创作的画布。
       </>
     ),
+    background: 'feature-bg-3'
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({title, description, background}) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+      <div className={clsx(styles.featureCard, styles[background])}>
+        <div className={styles.featureContent}>
+          <h3 className={styles.featureTitle}>{title}</h3>
+          <p className={styles.featureDescription}>{description}</p>
+        </div>
       </div>
     </div>
   );
