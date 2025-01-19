@@ -80,9 +80,9 @@
 .mainContainer {
   width: 100%;
   height: 100vh;
-  background-image: url('/img/monet-umbrella-lady.jpg'); /* 请确保图片放在正确的位置 */
+  background-image: url('/img/monet-umbrella-lady.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   background-repeat: no-repeat;
   position: relative;
 }
