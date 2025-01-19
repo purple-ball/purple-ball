@@ -312,30 +312,53 @@
   background: transparent !important;
 }
 
-/* 调整文档页面的背景 */
+/* 调整文档页面的边距和内边距 */
 :global(.docs-wrapper) {
   background: rgba(255, 255, 255, 0.6) !important;
   backdrop-filter: blur(10px);
-  border-radius: 0;  /* 移除圆角 */
-  margin: 0;         /* 移除边距 */
-  padding: 0;        /* 移除内边距 */
+  border-radius: 15px;
+  margin: 2rem !important;  /* 统一边距 */
+  padding: 2rem !important;  /* 统一内边距 */
 }
 
-/* 调整博客页面的背景 */
+/* 调整博客页面的边距和内边距 */
 :global(.blog-wrapper) {
   background: rgba(255, 255, 255, 0.6) !important;
   backdrop-filter: blur(10px);
-  border-radius: 0;  /* 移除圆角 */
-  margin: 0;         /* 移除边距 */
-  padding: 0;        /* 移除内边距 */
+  border-radius: 15px;
+  margin: 2rem !important;  /* 统一边距 */
+  padding: 2rem !important;  /* 统一内边距 */
 }
 
-/* 调整侧边栏背景 */
+/* 调整侧边栏边距 */
 :global(.theme-doc-sidebar-container) {
   background: rgba(255, 255, 255, 0.4) !important;
   backdrop-filter: blur(5px);
-  border-radius: 0;  /* 移除圆角 */
-  margin: 0;         /* 移除边距 */
+  border-radius: 15px;
+  margin: 2rem 0 2rem 2rem !important;  /* 左侧边距与主体对齐 */
+}
+
+/* 调整主内容区域边距 */
+:global(.container) {
+  padding: 0 !important;  /* 移除默认内边距 */
+}
+
+/* 调整文档内容区域边距 */
+:global(.theme-doc-markdown) {
+  padding: 0 1rem !important;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 996px) {
+  :global(.docs-wrapper),
+  :global(.blog-wrapper) {
+    margin: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  :global(.theme-doc-sidebar-container) {
+    margin: 1rem !important;
+  }
 }
 
 /* 调整文章卡片背景 */
@@ -368,75 +391,4 @@
 :global(.navbar__search-input) {
   background: rgba(255, 255, 255, 0.8) !important;
   backdrop-filter: blur(5px);
-}
-
-/* 调整内容区域容器 */
-:global(.container) {
-  padding: 0 !important;  /* 移除内边距 */
-  margin: 0 !important;   /* 移除边距 */
-  max-width: 100% !important;  /* 允许内容占满宽度 */
-}
-
-/* 调整主要内容区域 */
-:global(.main-wrapper) {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* 调整文档内容区域 */
-:global(.docPage) {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* 调整文档内容容器 */
-:global(.docMainContainer) {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* 美化侧边栏样式 */
-:global(.menu__link) {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 1.1rem !important;
-  padding: 0.8rem 1.2rem !important;
-  transition: all 0.3s ease !important;
-}
-
-:global(.menu__link:hover) {
-  background: rgba(255, 255, 255, 0.3) !important;
-  transform: translateX(5px);
-}
-
-:global(.menu__link--active) {
-  background: rgba(255, 255, 255, 0.4) !important;
-  border-right: 3px solid #DDA0DD !important;
-}
-
-/* 调整文档内容区域的样式 */
-:global(.markdown) {
-  padding: 2rem !important;
-  font-family: 'Open Sans', sans-serif;
-}
-
-:global(.markdown h1) {
-  font-family: 'Playfair Display', serif;
-  color: #4A154B;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid rgba(221, 160, 221, 0.3);
-  padding-bottom: 1rem;
-}
-
-:global(.markdown h2) {
-  font-family: 'Playfair Display', serif;
-  color: #663399;
-  font-size: 2rem;
-  margin-top: 2rem;
-}
-
-:global(.markdown p) {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #2c3e50;
 }
