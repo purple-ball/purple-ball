@@ -143,6 +143,41 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      sidebar: {
+        tutorialSidebar: [
+          {
+            type: 'category',
+            label: '个人主页',
+            items: [
+              {
+                type: 'doc',
+                id: 'tutorial-basics/about-me',
+                label: 'AboutMe！',
+              },
+              {
+                type: 'doc',
+                id: 'tutorial-basics/hobbies',
+                label: '一些热爱的事',
+              },
+              {
+                type: 'doc',
+                id: 'tutorial-basics/reading-notes',
+                label: '读书笔记',
+              },
+              {
+                type: 'doc',
+                id: 'tutorial-basics/movie-reviews',
+                label: '影视记录',
+              },
+              {
+                type: 'doc',
+                id: 'tutorial-basics/guestbook',
+                label: '留言芳草地',
+              },
+            ],
+          },
+        ],
+      },
     }),
 };
 
