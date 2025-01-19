@@ -220,3 +220,44 @@
     padding: 0.8rem 1.5rem;
   }
 }
+
+/* 添加导航栏样式 */
+:global(.navbar) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(5px);
+}
+
+:global(.navbar__brand) {
+  color: white !important;
+}
+
+:global(.navbar__link) {
+  color: white !important;
+  font-family: 'Playfair Display', serif;
+}
+
+:global(.navbar__toggle) {
+  color: white !important;
+}
+
+:global(.clean-btn) {
+  color: white !important;
+}
+
+:global(.navbar__logo) {
+  filter: brightness(0) invert(1); /* 将 logo 转换为白色 */
+}
+
+/* 确保导航栏在背景遮罩之上 */
+.mainContainer::before {
+  z-index: 1;
+}
+
+.contentWrapper {
+  z-index: 2;
+}
+
+:global(.navbar) {
+  z-index: 3 !important;
+}
