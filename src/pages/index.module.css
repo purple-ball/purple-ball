@@ -388,3 +388,43 @@
 :global(.blog-post) {
   padding: 2rem !important;  /* 为内容添加适当的内边距 */
 }
+
+/* 调整文档页面内容布局 */
+:global(.container .row .col) {
+  padding: 0 !important;
+}
+
+:global(.theme-doc-markdown) {
+  padding: 2rem !important;
+  max-width: 100% !important;
+}
+
+/* 调整文档页面容器 */
+:global(.container .row) {
+  margin: 0 !important;
+}
+
+/* 调整文档页面的内容区域 */
+:global(.theme-doc-markdown .markdown) {
+  padding: 0 var(--ifm-spacing-horizontal) !important;
+  max-width: var(--ifm-container-width) !important;
+  margin: 0 auto !important;
+}
+
+/* 调整侧边栏和主内容的间距 */
+:global(.main-wrapper .container) {
+  display: flex !important;
+  padding: 0 !important;
+}
+
+:global(.theme-doc-sidebar-container) {
+  border-right: none !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* 调整文档内容区域的宽度和位置 */
+:global(.theme-doc-sidebar-container + div) {
+  max-width: none !important;
+  padding: 0 !important;
+}
