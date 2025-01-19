@@ -1,7 +1,9 @@
 ---
+id: thoughts
+title: 碎碎念TT
 sidebar_position: 5
 ---
 
-# 碎碎念TT
+# 随想随记
 
-记录日常的想法和感受... 
+这里是我的一些碎碎念... 

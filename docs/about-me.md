@@ -1,7 +1,9 @@
 ---
+id: about-me
+title: AboutMe！
 sidebar_position: 1
 ---
 
-# AboutMe！
+# 关于我
 
-在这里介绍一下自己... 
+在这里，我将分享我的故事... 
