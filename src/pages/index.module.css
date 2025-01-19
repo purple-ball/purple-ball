@@ -394,3 +394,49 @@
   padding: 0 !important;
   margin: 0 !important;
 }
+
+/* 美化侧边栏样式 */
+:global(.menu__link) {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.1rem !important;
+  padding: 0.8rem 1.2rem !important;
+  transition: all 0.3s ease !important;
+}
+
+:global(.menu__link:hover) {
+  background: rgba(255, 255, 255, 0.3) !important;
+  transform: translateX(5px);
+}
+
+:global(.menu__link--active) {
+  background: rgba(255, 255, 255, 0.4) !important;
+  border-right: 3px solid #DDA0DD !important;
+}
+
+/* 调整文档内容区域的样式 */
+:global(.markdown) {
+  padding: 2rem !important;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:global(.markdown h1) {
+  font-family: 'Playfair Display', serif;
+  color: #4A154B;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(221, 160, 221, 0.3);
+  padding-bottom: 1rem;
+}
+
+:global(.markdown h2) {
+  font-family: 'Playfair Display', serif;
+  color: #663399;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+:global(.markdown p) {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #2c3e50;
+}
