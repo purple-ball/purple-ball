@@ -275,8 +275,8 @@
   display: none !important;
 }
 
-/* 添加全局背景样式 */
-:global(body) {
+/* 修改全局背景样式 */
+:global(#__docusaurus) {
   background: linear-gradient(
     135deg,
     #F0EAF4 0%,    /* 淡紫色 */
@@ -285,8 +285,24 @@
     #EAE6F0 75%,   /* 淡紫色 */
     #E8F4F2 100%   /* 淡青色 */
   ) !important;
-  background-attachment: fixed !important;
   min-height: 100vh;
+}
+
+:global(body),
+:global(html) {
+  background: none !important;
+  min-height: 100vh;
+}
+
+/* 确保内容容器也继承背景 */
+:global(.main-wrapper) {
+  background: none !important;
+  min-height: 100vh;
+}
+
+/* 移除之前的body背景设置 */
+:global(body) {
+  background: none !important;
 }
 
 /* 调整内容区域背景 */
