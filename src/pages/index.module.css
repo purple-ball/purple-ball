@@ -10,12 +10,13 @@
   overflow: hidden;
   background: linear-gradient(
     45deg,
-    #f7d794 0%,
-    #78e08f 30%,
-    #38ada9 60%,
-    #b8e994 100%
+    #FFD700 0%,    /* 明亮的黄色 */
+    #FFB6C1 30%,   /* 浅粉色 */
+    #DDA0DD 60%,   /* 梅红紫色 */
+    #FFC0CB 100%   /* 粉红色 */
   );
   animation: gradientFlow 15s ease infinite;
+  background-size: 300% 300%;
 }
 
 @keyframes gradientFlow {
@@ -46,16 +47,31 @@
 .heroTitle {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  color: #2d3436;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #4A154B;  /* 深紫色 */
+  text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);  /* 粉色阴影 */
   margin-bottom: 1rem;
 }
 
 .heroSubtitle {
   font-family: 'Open Sans', sans-serif;
-  color: #2d3436;
+  color: #663399;  /* 紫色 */
   font-size: 1.2rem;
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* 修改按钮样式 */
+:global(.button--secondary) {
+  background-color: #FFB6C1 !important;  /* 浅粉色 */
+  color: #4A154B !important;  /* 深紫色文字 */
+  border: 2px solid #DDA0DD !important;  /* 紫色边框 */
+  transition: all 0.3s ease;
+}
+
+:global(.button--secondary:hover) {
+  background-color: #DDA0DD !important;  /* 悬停时变为紫色 */
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(221, 160, 221, 0.3);
 }
