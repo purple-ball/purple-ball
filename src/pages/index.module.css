@@ -62,25 +62,18 @@
 }
 
 /* 修改按钮样式 */
-.button {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  color: white;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  border: 2px solid white;
-  border-radius: 30px;
+:global(.button--secondary) {
+  background-color: #FFB6C1 !important;  /* 浅粉色 */
+  color: #4A154B !important;  /* 深紫色文字 */
+  border: 2px solid #DDA0DD !important;  /* 紫色边框 */
   transition: all 0.3s ease;
-  background: rgba(128, 128, 128, 0.3); /* 修改为灰色背景 */
-  backdrop-filter: blur(5px);
 }
 
-.button:hover {
-  background: rgba(128, 128, 128, 0.5); /* 悬停时加深灰色 */
-  transform: translateX(10px);
-  color: white;
-  text-decoration: none;
-  border-color: rgba(255, 255, 255, 0.8); /* 悬停时边框略微透明 */
+:global(.button--secondary:hover) {
+  background-color: #DDA0DD !important;  /* 悬停时变为紫色 */
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(221, 160, 221, 0.3);
 }
 
 /* 主容器样式 */
@@ -94,7 +87,7 @@
   position: relative;
 }
 
-/* 添加半透明遮罩 */
+/* 修改半透明遮罩的颜色 */
 .mainContainer::before {
   content: '';
   position: absolute;
@@ -102,7 +95,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    to bottom,
+    rgba(128, 128, 128, 0.7) 0%,    /* 顶部灰色 */
+    rgba(0, 0, 0, 0.4) 40%          /* 渐变到原来的黑色 */
+  );
   z-index: 1;
 }
 
@@ -129,6 +126,27 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+/* 按钮样式 */
+.button {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 2px solid white;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+  color: white;
+  text-decoration: none;
 }
 
 /* 右侧区域样式 */
